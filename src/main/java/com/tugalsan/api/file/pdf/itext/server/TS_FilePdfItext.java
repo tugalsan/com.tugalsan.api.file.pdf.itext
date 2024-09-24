@@ -22,9 +22,9 @@ import com.tugalsan.api.unsafe.client.*;
 import com.tugalsan.api.url.client.*;
 import java.util.*;
 
-public class TS_FilePdf extends TS_FileCommonAbstract {
+public class TS_FilePdfItext extends TS_FileCommonAbstract {
 
-    final private static TS_Log d = TS_Log.of(TS_FilePdf.class);
+    final private static TS_Log d = TS_Log.of(TS_FilePdfItext.class);
 
     public TS_FilePdfItextUtils pdf;
     public PdfPTable pdfTable = null;
@@ -38,12 +38,12 @@ public class TS_FilePdf extends TS_FileCommonAbstract {
 
     private TS_FileCommonConfig fileCommonConfig;
 
-    private TS_FilePdf(boolean enabled, Path localFile, TGS_Url remoteFile) {
+    private TS_FilePdfItext(boolean enabled, Path localFile, TGS_Url remoteFile) {
         super(enabled, localFile, remoteFile);
     }
 
-    public static void use(boolean enabled, TS_FileCommonConfig fileCommonConfig, Path localFile, TGS_Url remoteFile, TGS_Func_In1<TS_FilePdf> pdf) {
-        var instance = new TS_FilePdf(enabled, localFile, remoteFile);
+    public static void use(boolean enabled, TS_FileCommonConfig fileCommonConfig, Path localFile, TGS_Url remoteFile, TGS_Func_In1<TS_FilePdfItext> pdf) {
+        var instance = new TS_FilePdfItext(enabled, localFile, remoteFile);
         try {
             instance.use_init(fileCommonConfig);
             pdf.run(instance);
