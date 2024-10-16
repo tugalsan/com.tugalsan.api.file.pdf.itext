@@ -153,14 +153,14 @@ public class TS_FilePdfItextUtils implements AutoCloseable {
                     .anointIf(val -> val < 0, val -> 0)
                     .anointIf(val -> val > 6, val -> 6)
                     .coronate();
-            var pageSize = TGS_FuncEffectivelyFinal.of(TS_FilePdfItextUtils.getPAGE_SIZE_A4_PORT())
-                    .anointIf(val -> pageSizeAX == 0, val -> landscape ? TS_FilePdfItextUtils.getPAGE_SIZE_A0_LAND() : TS_FilePdfItextUtils.getPAGE_SIZE_A0_PORT())
-                    .anointIf(val -> pageSizeAX == 1, val -> landscape ? TS_FilePdfItextUtils.getPAGE_SIZE_A1_LAND() : TS_FilePdfItextUtils.getPAGE_SIZE_A1_PORT())
-                    .anointIf(val -> pageSizeAX == 2, val -> landscape ? TS_FilePdfItextUtils.getPAGE_SIZE_A2_LAND() : TS_FilePdfItextUtils.getPAGE_SIZE_A2_PORT())
-                    .anointIf(val -> pageSizeAX == 3, val -> landscape ? TS_FilePdfItextUtils.getPAGE_SIZE_A3_LAND() : TS_FilePdfItextUtils.getPAGE_SIZE_A3_PORT())
-                    .anointIf(val -> pageSizeAX == 4, val -> landscape ? TS_FilePdfItextUtils.getPAGE_SIZE_A4_LAND() : TS_FilePdfItextUtils.getPAGE_SIZE_A4_PORT())
-                    .anointIf(val -> pageSizeAX == 5, val -> landscape ? TS_FilePdfItextUtils.getPAGE_SIZE_A5_LAND() : TS_FilePdfItextUtils.getPAGE_SIZE_A5_PORT())
-                    .anointIf(val -> pageSizeAX == 6, val -> landscape ? TS_FilePdfItextUtils.getPAGE_SIZE_A6_LAND() : TS_FilePdfItextUtils.getPAGE_SIZE_A6_PORT())
+            var pageSize = TGS_FuncEffectivelyFinal.of(getPAGE_SIZE_A4_PORT())
+                    .anointIf(val -> pageSizeAX == 0, val -> landscape ? getPAGE_SIZE_A0_LAND() : getPAGE_SIZE_A0_PORT())
+                    .anointIf(val -> pageSizeAX == 1, val -> landscape ? getPAGE_SIZE_A1_LAND() : getPAGE_SIZE_A1_PORT())
+                    .anointIf(val -> pageSizeAX == 2, val -> landscape ? getPAGE_SIZE_A2_LAND() : getPAGE_SIZE_A2_PORT())
+                    .anointIf(val -> pageSizeAX == 3, val -> landscape ? getPAGE_SIZE_A3_LAND() : getPAGE_SIZE_A3_PORT())
+                    .anointIf(val -> pageSizeAX == 4, val -> landscape ? getPAGE_SIZE_A4_LAND() : getPAGE_SIZE_A4_PORT())
+                    .anointIf(val -> pageSizeAX == 5, val -> landscape ? getPAGE_SIZE_A5_LAND() : getPAGE_SIZE_A5_PORT())
+                    .anointIf(val -> pageSizeAX == 6, val -> landscape ? getPAGE_SIZE_A6_LAND() : getPAGE_SIZE_A6_PORT())
                     .coronate();
             if (document == null) {
                 document = new TS_FilePdfItextDocumentAutoClosable(pageSize, marginLeft, marginRight, marginTop, marginBottom);
