@@ -15,6 +15,7 @@ public class TS_FilePdfItextPDFWriter extends PdfWriter implements AutoCloseable
         super.close();
     }
 
+    //so that I can return TS_FilePdfItextPDFWriter, not pdfWriter
     public static TS_FilePdfItextPDFWriter getInstance(TS_FilePdfItextDocumentAutoClosable document, OutputStream os) {
         return TGS_UnSafe.call(() -> {
             //dont tryy to autoclose!
